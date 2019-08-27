@@ -122,6 +122,29 @@ public class SingleLinkedList {
     }
 
     /**
+     * 将单链表进行反转
+     * @param head
+     */
+    public static void reverseList(HeroNode head) {
+        // 如果当前链表为空或者只有一个节点，无需反转，直接进行返回
+        if (head.next == null || head.next.next == null) {
+            return ;
+        }
+        // 定义一个辅助指针，来帮助我们便利原来的链表
+        HeroNode cur = head.next;
+        HeroNode next = null;
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        //便利原来的链表，每便利一个节点，就将其取出，并放在新的链表reverseHead顶端
+        while (cur != null) {
+            next = cur.next;
+            cur.next = reverseHead.next;
+            reverseHead.next = cur;
+            cur = next;
+        }
+        head.next = reverseHead.next;
+    }
+
+    /**
      * 展示单向链表
      */
     public void show() {
@@ -137,5 +160,9 @@ public class SingleLinkedList {
             System.out.println(temp);
             temp = temp.next;
         }
+    }
+
+    public HeroNode getHead() {
+        return head;
     }
 }
