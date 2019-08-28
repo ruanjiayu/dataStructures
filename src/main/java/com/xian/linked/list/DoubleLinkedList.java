@@ -12,6 +12,7 @@ public class DoubleLinkedList {
 
     /**
      * 在双向链表内插入数据
+     *
      * @param heroDoubleNode 节点
      */
     public void add(HeroDoubleNode heroDoubleNode) {
@@ -24,6 +25,32 @@ public class DoubleLinkedList {
         }
         temp.next = heroDoubleNode;
         heroDoubleNode.pre = temp;
+    }
+
+    /**
+     * 双向链表内插入数据，得到一个有序的链表,不能插入同一个对象值，因为对象是地址传递，
+     * 也就是对象保存的实际是真实值的在内存中的地址，这样就会导致插入同一个对象，会不停的引用自身，导致死循环
+     * 解决的办法就是不让不能插入相同排序号NO的对象值
+     *
+     * @param heroDoubleNode
+     */
+    public void addByOrder(HeroDoubleNode heroDoubleNode) {
+        HeroDoubleNode temp = head;
+        while (true) {
+            if (temp.next == null) {
+                break;
+            }
+            if (temp.next.no >= heroDoubleNode.no) {
+                break;
+            }
+            temp = temp.next;
+        }
+        heroDoubleNode.pre = temp;
+        heroDoubleNode.next = temp.next;
+        if (temp.next != null) {
+            temp.next.pre = heroDoubleNode;
+        }
+        temp.next = heroDoubleNode;
     }
 
     /**
@@ -61,6 +88,7 @@ public class DoubleLinkedList {
 
     /**
      * 删除节点，使用内存的回收机制
+     *
      * @param deleteNo
      */
     public void delete(int deleteNo) {

@@ -27,6 +27,29 @@ public class DoubleLinkedListTest {
         doubleLinkedList.add(heroNode4);
         doubleLinkedList.show();
     }
+    
+    @Test
+    public void addByOrder() {
+        HeroDoubleNode heroNode1 = new HeroDoubleNode(1, "宋江", "及时雨");
+        HeroDoubleNode newhHeroNode1 = new HeroDoubleNode(1, "小宋江", "小及时雨");
+        HeroDoubleNode heroNode2 = new HeroDoubleNode(2, "卢俊义", "玉麒麟");
+        HeroDoubleNode heroNode3 = new HeroDoubleNode(3, "吴用", "智多星");
+        HeroDoubleNode heroNode4 = new HeroDoubleNode(4, "林冲", "豹子头");
+        HeroDoubleNode heroNode5 = new HeroDoubleNode(5, "公孙胜", "入云龙");
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        // 直接插入
+        doubleLinkedList.addByOrder(heroNode1);
+        doubleLinkedList.addByOrder(newhHeroNode1);
+//        doubleLinkedList.addByOrder(heroNode4);
+//        doubleLinkedList.addByOrder(heroNode2);
+//        doubleLinkedList.addByOrder(heroNode5);
+//        doubleLinkedList.addByOrder(heroNode2);
+//        doubleLinkedList.addByOrder(heroNode3);
+//        doubleLinkedList.addByOrder(heroNode4);
+        doubleLinkedList.show();
+    }
+    
+    
 
     @Test
     public void update() {

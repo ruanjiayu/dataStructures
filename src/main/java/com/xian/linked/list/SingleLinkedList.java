@@ -38,7 +38,7 @@ public class SingleLinkedList {
      */
     public void addByOrder(HeroNode heroNode) {
         HeroNode temp = head;
-        boolean flag = false;
+        boolean flag = true;
         while (true) {
             // 说明已经在链表的结尾类
             if (temp.next == null) {
@@ -49,7 +49,7 @@ public class SingleLinkedList {
                 break;
             } else if (temp.next.no == heroNode.no) {
                 // 说明出现重复序号
-                flag = true;
+                flag = false;
                 break;
             }
             temp = temp.next;
