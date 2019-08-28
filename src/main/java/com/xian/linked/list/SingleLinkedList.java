@@ -1,5 +1,7 @@
 package com.xian.linked.list;
 
+import java.util.Stack;
+
 /**
  * @Description 单向链表的插入操作
  * @Author: fan
@@ -62,6 +64,7 @@ public class SingleLinkedList {
 
     /**
      * 修改链表内的数据
+     *
      * @param newHeroNode 需要修改的节点数据
      */
     public void update(HeroNode newHeroNode) {
@@ -94,6 +97,7 @@ public class SingleLinkedList {
 
     /**
      * 删除节点，使用内存的回收机制
+     *
      * @param deleteNo
      */
     public void delete(int deleteNo) {
@@ -106,9 +110,9 @@ public class SingleLinkedList {
         while (true) {
             if (temp.next == null) {
                 // 已经到最后了
-               break;
+                break;
             }
-            if (temp.next.no == deleteNo){
+            if (temp.next.no == deleteNo) {
                 flag = true;
                 break;
             }
@@ -123,12 +127,13 @@ public class SingleLinkedList {
 
     /**
      * 将单链表进行反转
+     *
      * @param head
      */
     public static void reverseList(HeroNode head) {
         // 如果当前链表为空或者只有一个节点，无需反转，直接进行返回
         if (head.next == null || head.next.next == null) {
-            return ;
+            return;
         }
         // 定义一个辅助指针，来帮助我们便利原来的链表
         HeroNode cur = head.next;
@@ -142,6 +147,25 @@ public class SingleLinkedList {
             cur = next;
         }
         head.next = reverseHead.next;
+    }
+
+    /**
+     * 将链表从倒序打印出来
+     * @param head
+     */
+    public static void reservePrint(HeroNode head) {
+        if (head.next == null) {
+            return;
+        }
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = head.next;
+        while (cur != null) {
+            stack.push(cur);
+            cur = cur.next;
+        }
+        while (stack.size() > 0) {
+            System.out.println(stack.pop());
+        }
     }
 
     /**

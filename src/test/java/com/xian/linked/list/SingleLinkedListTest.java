@@ -94,6 +94,9 @@ public class SingleLinkedListTest {
         singleLinkedList.show();
     }
 
+    /**
+     * 将链表倒序
+     */
     @Test
     public void reverseList() {
         HeroNode heroNode1 = new HeroNode(1, "宋江", "及时雨");
@@ -110,5 +113,25 @@ public class SingleLinkedListTest {
         System.out.println("----反转后-----");
         SingleLinkedList.reverseList(singleLinkedList.getHead());
         singleLinkedList.show();
+    }
+
+    /**
+     * 将链表从逆向输出
+     */
+    @Test
+    public void reversePrint() {
+        HeroNode heroNode1 = new HeroNode(1, "宋江", "及时雨");
+        HeroNode heroNode2 = new HeroNode(2, "卢俊义", "玉麒麟");
+        HeroNode heroNode3 = new HeroNode(3, "吴用", "智多星");
+        HeroNode heroNode4 = new HeroNode(4, "林冲", "豹子头");
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+        // 直接插入
+        singleLinkedList.add(heroNode1);
+        singleLinkedList.add(heroNode2);
+        singleLinkedList.add(heroNode3);
+        singleLinkedList.add(heroNode4);
+        singleLinkedList.show();
+        System.out.println("----倒序输出-----");
+        SingleLinkedList.reservePrint(singleLinkedList.getHead());
     }
 }
