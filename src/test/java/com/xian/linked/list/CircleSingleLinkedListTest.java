@@ -15,15 +15,22 @@ import static org.junit.Assert.*;
 public class CircleSingleLinkedListTest {
 
     @Test
-    public void add() {
+    public void addTest() {
         CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();
         circleSingleLinkedList.add(5);
         circleSingleLinkedList.show();
     }
 
     @Test
-    public void show() {
+    public void showTest() {
         CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();
         circleSingleLinkedList.show();
+    }
+
+    @Test
+    public void josephTest() {
+        CircleSingleLinkedList circleSingleLinkedList = new CircleSingleLinkedList();
+        circleSingleLinkedList.add(5);
+        circleSingleLinkedList.joseph(1, 2, 5);
     }
 }
