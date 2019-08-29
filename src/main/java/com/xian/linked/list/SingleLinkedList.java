@@ -1,5 +1,7 @@
 package com.xian.linked.list;
 
+import com.xian.linked.list.bo.HeroNode;
+
 import java.util.Stack;
 
 /**

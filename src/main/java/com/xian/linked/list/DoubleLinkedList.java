@@ -1,7 +1,7 @@
 package com.xian.linked.list;
 
 /**
- * @Description
+ * @Description: 双向链表
  * @Author: fan
  * @DateTime: 2019-08-28 22:09
  * @Version: 0.0.1-SNAPSHOT

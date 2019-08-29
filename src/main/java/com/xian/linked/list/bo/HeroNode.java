@@ -1,4 +1,4 @@
-package com.xian.linked.list;
+package com.xian.linked.list.bo;
 
 /**
  * @Description 定义节点
