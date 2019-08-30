@@ -139,7 +139,7 @@ public class SingleLinkedList {
         }
         // 定义一个辅助指针，来帮助我们便利原来的链表
         HeroNode cur = head.next;
-        HeroNode next = null;
+        HeroNode next;
         HeroNode reverseHead = new HeroNode(0, "", "");
         //便利原来的链表，每便利一个节点，就将其取出，并放在新的链表reverseHead顶端
         while (cur != null) {
